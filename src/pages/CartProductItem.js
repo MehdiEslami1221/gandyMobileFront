@@ -8,11 +8,22 @@ function CartProductItem({product}) {
     const productQuantity = cartItems?.filter((row) => row.id === product.id)[0]?.count
 
     return (
-        <div>
-            <span className="mx-2">{product.id}</span>
-            <span className="mx-2">{productQuantity}</span>
-            <span className="mx-2">{productQuantity * product.price}</span>
-            <button onClick={() => removeFromCart(product.id)}>حذف محصول</button>
+        <div className="d-flex justify-content-start align-items-center my-2">
+            <img className="img-fluid" style={{width: '30px'}} src={product.image}/>
+            <div className="d-flex flex-row">
+                <span className="mx-2">تعداد:</span>
+                <span>{productQuantity}</span>
+                <span>عدد</span>
+            </div>
+
+            <div className="d-flex flex-row">
+                <span className="mx-2">قیمت:</span>
+                <span>{productQuantity * product.price}</span>
+                <span>تومان</span>
+            </div>
+
+
+            <button className="btn" onClick={() => removeFromCart(product.id)}><span className="fa fa-close text-danger"/></button>
         </div>
     )
 }

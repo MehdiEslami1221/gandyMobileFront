@@ -20,6 +20,7 @@ import SwiperProduct from "./SwiperProduct";
 import LatestProducts from "./LatestProducts";
 import {getWebInfo} from "../services/Service";
 import React, {useEffect, useState} from "react";
+import TopMenuBar from "./TopMenuBar";
 
 
 const Layout = () => {
@@ -46,6 +47,7 @@ const Layout = () => {
 
         <div className="container-fluid m-0 p-0">
             <>
+                <TopMenuBar/>
                 <SearchBar data={webinfo}/>
                 <MenuBar/>
                 <SwiperSlider/>
