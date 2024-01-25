@@ -18,15 +18,15 @@ const SearchBar = ({data}) => {
     return (
         <nav className="navbar navbar-light justify-content-between mx-3">
 
-            <div className="d-flex col-12 col-md-9 justify-content-start align-items-center">
+            <div className="d-flex col-12  col-md-12 col-lg-8  justify-content-start align-items-center">
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="navbar-brand d-none d-md-inline mx-0" href="#">
+                <a className="navbar-brand col-md-1 d-none d-md-inline mx-0" href="#">
                     <img src={require('../assets/images/logo-gandi.png')} width="50"
                          className="d-inline-block align-top me-4" alt=""/>
                     <span className="mx-1 fs-6 visually-hidden">موبایل گاندی</span>
                 </a>
 
-                <form className="form-inline col-12 col-md-5 my-2 my-lg-0">
+                <form className="form-inline col-12 col-md-11 my-2 my-lg-0">
                     <input className="form-control" type="search" placeholder="نام محصول مورد نظر خود را وارد کنید."
                            aria-label="Search">
 
@@ -37,7 +37,7 @@ const SearchBar = ({data}) => {
             </div>
 
 
-            <div className="col-0 col-md-3 d-none d-md-inline-flex justify-content-end align-items-center">
+            <div className="d-flex col-12 col-md-12 col-lg-4 d-md-inline-flex justify-content-lg-end justify-content-center align-items-center">
 
                 <div className="d-flex border border-2 rounded-3 border-dark p-1">
                     <a href="#" className="link-dark link-opacity-75-hover text-decoration-none mx-2">ثبت نام</a>
@@ -80,9 +80,7 @@ const SearchBar = ({data}) => {
                                         <>
                                             {
                                                 productList.map((item) => {
-
                                                     if (cartItems.some((i)=>i.id===item.id && i.count >0))
-
                                                         return     <CartProductItem key={item.id} product={item}/>
                                                 })
                                             }
