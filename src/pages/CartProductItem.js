@@ -23,7 +23,7 @@ function CartProductItem({product}) {
             </div>
 
 
-            <button className="btn" onClick={() => removeFromCart(product.id)}><span className="fa fa-close text-danger"/></button>
+            <button className="link-light link-opacity-25 mx-2" onClick={() => removeFromCart(product.id)}><span className="fa fa-close text-danger"/></button>
         </div>
     )
 }
