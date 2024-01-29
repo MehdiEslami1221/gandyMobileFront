@@ -1,15 +1,22 @@
 import axios from "axios";
 
-const SERVER_URL = "http://192.168.1.56:8081/api/";
+export const SERVER_URL = "http://192.168.1.56:8081/api/";
 
 
 export const getWebInfo = () => {
     const url = `${SERVER_URL}webInfo/getById/1`;
     return axios.get(url)
 }
+
+
 export const getAllSlider = () => {
     const url = `${SERVER_URL}slider/getAll`;
     return axios.get(url)
+}
+
+export const getAllProduct = () => {
+    const url = `${SERVER_URL}productAccess/getAll`;
+    return axios.post(url)
 }
 
 export const getFooterMenu = () => {

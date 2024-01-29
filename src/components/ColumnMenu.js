@@ -28,7 +28,6 @@ const ColumnMenu = () => {
                         alt="..." className="img-fluid w-100 rounded-3"/>
                 </a>
             </div>
-
         </div>
     )
 }

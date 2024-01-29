@@ -10,9 +10,28 @@ import 'swiper/css/pagination';
 import imgShegeftangiz from "../assets/images/shegeftangiz.png";
 import iconArrowCircleLeft from '../assets/icons/arrow-circle-left.svg';
 import iconArrowLeftWhite from '../assets/icons/arrow-left-white.svg';
+import {useEffect, useState} from "react";
+import {getAllProduct, getAllSlider} from "../services/Service";
 
 
 export default function SwiperProduct() {
+
+    const [product, setProduct] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const {data: dataSlider} = await getAllProduct();
+                setProduct(dataSlider)
+                console.log('Product='+product.length)
+            } catch (err) {
+                console.log(err.message())
+            }
+        }
+        fetchData().then(r => r);
+    }, []);
+
+
     return (
 
         <Swiper
@@ -54,7 +73,7 @@ export default function SwiperProduct() {
 
 
             {
-                productList.map((item) => (
+                product.map((item) => (
                     <SwiperSlide key={item.id}>
                         <ProductItem product={item}/>
                     </SwiperSlide>

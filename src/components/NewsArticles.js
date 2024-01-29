@@ -8,10 +8,8 @@ const NewsArticles = () => {
                         <h6 className="me-2">مشاهده</h6>
                         <span className="fa fa-arrow-left fs-6"/>
                     </a>
-
                 </div>
             </div>
-
 
             <div className="container p-0 m-0 mt-3">
                 <div className="row">
@@ -70,7 +68,6 @@ const NewsArticles = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

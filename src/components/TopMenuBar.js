@@ -38,7 +38,7 @@ const TopMenuBar = () => {
                     </li>
                 </ul>
                 <div>
-                    <div className="d-flex justify-content-end align-items-center">
+                    <div className="d-flex justify-content-end align-items-center ">
                         <a href="#" className="text-decoration-none link-secondary mx-2">
                             <img src={iconSms} alt="Logo"/>
                         </a>

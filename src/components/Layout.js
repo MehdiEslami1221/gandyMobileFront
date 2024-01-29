@@ -4,6 +4,8 @@ import 'bootstrap/dist/js/bootstrap.min';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-popper';
 import SwiperSlider from "./SwiperSlider";
+import InternalPage from "./InternalPage";
+import DetailsThumb from "./DetailsThumb";
 import CircularMenu from "./CircularMenu";
 import ColumnMenu from "./ColumnMenu";
 import GroupMenu from "./GroupMenu";
@@ -47,7 +49,7 @@ const Layout = () => {
 
         <div className="container-fluid m-0 p-0">
             <>
-                <TopMenuBar/>
+                 <TopMenuBar/>
                 <SearchBar data={webinfo}/>
                 <MenuBar/>
                 <SwiperSlider/>
