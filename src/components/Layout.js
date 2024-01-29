@@ -49,8 +49,7 @@ const Layout = () => {
 
         <div className="container-fluid m-0 p-0">
             <>
-            <InternalPage/>
-                {/* <TopMenuBar/>
+                 <TopMenuBar/>
                 <SearchBar data={webinfo}/>
                 <MenuBar/>
                 <SwiperSlider/>
@@ -68,7 +67,7 @@ const Layout = () => {
                     <NewsArticles/>
                 </div>
                 <Footer data={webinfo}/>
-                <Outlet/> */}
+                <Outlet/>
             </>
         </div>
 

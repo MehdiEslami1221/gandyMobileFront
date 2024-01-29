@@ -1,13 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import DetailsThumb from "./DetailsThumb";
 import star from "../assets/images/star-48.png";
 import store from "../assets/images/store-48.png";
 import ok from "../assets/images/icons-ok.png";
 
 import Checkbox from "rc-checkbox";
+import PurchaseInformation from "./PurchaseInformation";
+
+
+
+
+
 
 class InternalPage extends React.Component {
+
+
   state = {
+
     products: [
       {
         _id: "1",
@@ -39,7 +48,7 @@ class InternalPage extends React.Component {
         attrName : "حافظه جانبی",
         config : "64 گیگابایت"
       }
-      
+
     ],
   };
 
@@ -157,6 +166,7 @@ class InternalPage extends React.Component {
               </div>
             </div>
 
+
             <div className="cart">
               <div className="row1">
                 <div className="horiz">
@@ -194,42 +204,8 @@ class InternalPage extends React.Component {
           </div>
         ))}
 
-        <div className="zemanat">
-          <div className="define-block">
-            <h6>مقایسه</h6>
-            <img src={store} width={30} height={30} alt="" />
-          </div>
+        <PurchaseInformation/>
 
-          <div className="define-block">
-            <h6>خرید اقساطی</h6>
-            <img src={store} width={30} height={30} alt="" />
-          </div>
-
-          <div className="define-block">
-            <h6>تضمین اصالت کالا</h6>
-            <img src={store} width={30} height={30} alt="" />
-          </div>
-
-          <div className="define-block">
-            <h6>خرید بی واسطه</h6>
-            <img src={store} width={30} height={30} alt="" />
-          </div>
-
-          <div className="define-block">
-            <h6>هفت روز ضمانت بازگشت</h6>
-            <img src={store} width={30} height={30} alt="" />
-          </div>
-
-          <div className="define-block">
-            <h6>ارسال سریع و رایگان</h6>
-            <img src={store} width={30} height={30} alt="" />
-          </div>
-
-          <div className="define-block">
-            <h6>راهنمای خرید</h6>
-            <img src={store} width={30} height={30} alt="" />
-          </div>
-        </div>
 
         <div className="attribute">
           <h5>مشخصات فنی</h5>
