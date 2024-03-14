@@ -10,39 +10,39 @@ const FeatureFilter = () => {
                         <div className="row g-2 my-3">
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>گوشی ساده و ارزان</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}> گوشی ارزان</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>تا ۵ میلیون</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>تا ۵ میلیون</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>تا ۱۵ میلیون</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>تا ۱۵ میلیون</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>تا ۲۰ میلیون</span>
-                                </div>
-                            </a>
-
-
-                            <a href="#" className="col-4 text-decoration-none link-secondary">
-                                <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>تا ۵۰ میلیون</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>تا ۲۰ میلیون</span>
                                 </div>
                             </a>
 
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>تا ۷۵ میلیون</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>تا ۵۰ میلیون</span>
+                                </div>
+                            </a>
+
+
+                            <a href="#" className="col-4 text-decoration-none link-secondary">
+                                <div className="p-2 border bg-light rounded text-center bg-white">
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>تا ۷۵ میلیون</span>
                                 </div>
                             </a>
                         </div>
@@ -55,37 +55,37 @@ const FeatureFilter = () => {
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>گیمینگ</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>گیمینگ</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>دوربین</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>دوربین</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>5G</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>5G</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>باتری</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>باتری</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>ضدآب</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>ضدآب</span>
                                 </div>
                             </a>
 
                             <a href="#" className="col-4 text-decoration-none link-secondary">
                                 <div className="p-2 border bg-light rounded text-center bg-white">
-                                    <span>شارژ سریع</span>
+                                    <span className="fw-bold" style={{fontSize:'12px'}}>شارژ سریع</span>
                                 </div>
                             </a>
 

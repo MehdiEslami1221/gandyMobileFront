@@ -9,24 +9,20 @@ import iconInstagramFooter from '../assets/icons/instagram-footer.svg';
 import imgSamandehiFooter from '../assets/images/samandehi.png';
 import imgEtehadieFooter from '../assets/images/etehadie-keshvari.png';
 import imgNamadFooter from '../assets/images/namad.png';
-import {getFooterMenu, getFooterSubMenu, getWebInfo} from "../services/Service";
-
-
+import {getFooterMenu, getWebInfo} from "../services/Service";
+import {Link} from "react-router-dom";
 
 
 const Footer = ({data}) => {
     const [webinfo, setWebInfo] = useState({});
-    const [footerSubMenu, setfooterSubMenu] = useState([]);
     const [footerMenu, setfooterMenu] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const {data: webInfoData} = await getWebInfo();
                 const {data: footerMenu} = await getFooterMenu();
-                const {data: footerSubMenu} = await getFooterSubMenu();
                 setWebInfo(webInfoData)
                 setfooterMenu(footerMenu)
-                setfooterSubMenu(footerSubMenu)
             } catch (err) {
                 console.log(err.message);
             }
@@ -37,69 +33,7 @@ const Footer = ({data}) => {
     return (
 
 
-        <div className="p-5" style={{backgroundColor: "#023375"}}>
-
-
-            {/*{footerSubMenu.map(e =>*/}
-            {/*        <h1 className="text-light" key={e.id}>{e.id}</h1>*/}
-            {/*)*/}
-            {/*}            */}
-
-
-            {/*{*/}
-            {/*    footerSubMenu.map(*/}
-            {/*        e =>*/}
-            {/*            <h1 className={"text-light"}>{e.footerMenu.name}</h1>*/}
-            {/*    )*/}
-            {/*}*/}
-
-            <div className="flex-row">
-                {
-
-                    // let pp = arr.filter( (ele, ind) => ind === arr.findIndex( elem => elem.jobid === ele.jobid && elem.id === ele.id))
-
-
-                    footerMenu.map(menu => {
-
-                        const uniqueNames = footerSubMenu.filter((val, id, array) => {
-                            return array.indexOf(val) === id;
-                        });
-
-
-                        return <h1>{uniqueNames.id}</h1>
-                        }
-                    )
-                }
-            </div>
-
-            {/*.filter(user => user.name.includes(value));*/}
-            <div className="d-flex">
-                {
-                    // footerMenu.map(e => <div className="flex-row px-5 text-light">{e.id}
-                    //         {
-                    //             footerSubMenu.filter(subMenu=>subMenu.id===1).map(sub=> <h1>{sub.id}</h1>)
-                    //         }
-                    //     </div>
-                    // )
-
-
-                    // [...Array(footerMenu.length)].map((x, i) =>
-                    //     <div className="d-flex flex-column align-items-start">
-                    //         <span className="text-light fs-6 mx-3">{footerMenu.name}</span>
-                    //         <ul className="navbar-nav">
-                    //             {/*{[...Array(footerSubMenu.length)].map((x, i) =>*/}
-                    //             {/*    <li className="nav-item mx-3">*/}
-                    //             {/*        /!* eslint-disable-next-line jsx-a11y/anchor-is-valid *!/*/}
-                    //             {/*        <a className="link-light link-opacity-50-hover text-decoration-none"*/}
-                    //             {/*           style={{fontSize: '0.8rem'}} href={footerMenu.id}>{footerMenu.id}</a>*/}
-                    //             {/*    </li>*/}
-                    //             {/*)}*/}
-                    //         </ul>
-                    //     </div>
-                    // )
-
-                }
-            </div>
+        <div className="p-5 user-select-none" style={{backgroundColor: "#023375"}}>
 
 
             <footer className="text-center m-0 p-0">
@@ -107,7 +41,7 @@ const Footer = ({data}) => {
                 <div className="mx-3 my-3">
                     <div className="d-flex">
                         <span className="text-light">تلفن:</span>
-                        <span className="text-light mx-2">{webinfo.tell}</span>
+                        <span className="text-light mx-2" style={{direction:'rtl'}}>{webinfo.tell}</span>
                     </div>
 
                     <div className="d-flex mt-3">
@@ -118,21 +52,25 @@ const Footer = ({data}) => {
 
 
                 <div className="d-flex">
-                    {[...Array(6)].map((x, i) =>
-                        <div className="d-flex flex-column align-items-start">
-                            <span className="text-light fs-6 mx-3">تست عنوان</span>
-                            <ul className="navbar-nav">
-                                {[...Array(6)].map((x, i) =>
-                                    <li className="nav-item mx-3">
-                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                        <a className="link-light link-opacity-50-hover text-decoration-none"
-                                           style={{fontSize: '0.8rem'}} href="#">تست ساب منو</a>
-                                    </li>
-                                )}
-                            </ul>
+                    {
+                        footerMenu?.map(menu =>
+                            <div className="d-flex flex-column align-items-start">
+                                <span className="text-light fs-6 mx-3">{menu.name}</span>
+                                <ul className="navbar-nav">
+                                    {
+                                        menu.footerSubMenus?.map(sub =>
+                                            <li className="nav-item mx-3">
+                                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                                <a className="link-light link-opacity-50-hover text-decoration-none"
+                                                   style={{fontSize: '0.8rem'}} href={sub.url}>{sub.name}</a>
+                                            </li>
+                                        )
+                                    }
+                                </ul>
 
-                        </div>
-                    )}
+                            </div>
+                        )
+                    }
                 </div>
 
 
@@ -141,7 +79,7 @@ const Footer = ({data}) => {
                         <div className="col">
                             <div className="d-flex flex-column align-items-start">
                                 <h5 className="text-white">موبایل گاندی</h5>
-                                <span className="text-white">موبایل گاندی واردکننده رسمی تلفن همراه و گوشی هوشمند</span>
+                                <span className="text-white">فروشگاه موبایل گاندی وابسته به شرکت پارس همراه صباحی وارد کننده رسمی انواع تلفن های همراه</span>
                                 <p className="text-white fw-light mt-4"
                                    style={{textAlign: "justify", textJustify: "inter-word", fontSize: '14px'}}>
                                     {webinfo.aboutUs}
@@ -167,17 +105,28 @@ const Footer = ({data}) => {
                             </div>
                             <div className="text-white d-flex flex-row justify-content-center align-items-center mt-3">
 
-                                <a href="#" className="text-decoration-none link-secondary mx-2">
-                                    <img src={imgEtehadieFooter} alt="Logo"/>
-                                </a>
 
-                                <a href="#" className="text-decoration-none link-secondary mx-2">
-                                    <img src={imgSamandehiFooter} alt="Logo"/>
-                                </a>
+                                <a referrerPolicy='origin' target='_blank'
+                                   className="mx-2"
+                                   href='https://trustseal.enamad.ir/?id=464373&Code=QVr8965NgLyyjTLcLVaGhfq70GxctnbB'>
+                                    <img referrerPolicy='origin'
+                                    src='https://trustseal.enamad.ir/logo.aspx?id=464373&Code=QVr8965NgLyyjTLcLVaGhfq70GxctnbB'
+                                    alt='' style={{cursor:'pointer'}} Code='QVr8965NgLyyjTLcLVaGhfq70GxctnbB'/></a>
 
-                                <a href="#" className="text-decoration-none link-secondary mx-2">
-                                    <img src={imgNamadFooter} alt="Logo"/>
-                                </a>
+
+                                {/*<a href="#" className="text-decoration-none link-secondary mx-2">*/}
+                                {/*    <img src={imgSamandehiFooter} alt="Logo"/>*/}
+                                {/*</a>*/}
+
+
+                                {/*<a href="#" className="text-decoration-none link-secondary mx-2">*/}
+                                {/*    <img src={imgEtehadieFooter} alt="Logo"/>*/}
+                                {/*</a>*/}
+
+                                {/*<a href="#" className="text-decoration-none link-secondary mx-2">*/}
+                                {/*    <img src={imgNamadFooter} alt="Logo"/>*/}
+                                {/*</a>*/}
+
                             </div>
 
 
@@ -224,9 +173,12 @@ const Footer = ({data}) => {
                                         <img src={iconFacebookFooter} alt="Logo"/>
                                     </a>
 
-                                    <a href="#" className="text-decoration-none link-secondary mx-2">
+                                    <a href={'https://www.instagram.com/'+webinfo.instagram}
+                                       className="text-decoration-none link-secondary mx-2">
                                         <img src={iconInstagramFooter} alt="Logo"/>
                                     </a>
+
+
 
                                 </div>
                             </div>

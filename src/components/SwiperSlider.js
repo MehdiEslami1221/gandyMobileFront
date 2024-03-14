@@ -8,6 +8,9 @@ import React, {useEffect, useState} from "react";
 import {getAllSlider, SERVER_URL} from "../services/Service";
 
 
+
+
+
 const SwiperSlider = () => {
 
     const [slider, setSlider] = useState([]);
@@ -38,8 +41,6 @@ const SwiperSlider = () => {
             }}
             dir="rtl"
             pagination={{clickable: true}}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
         >
 
             {slider?.length > 0

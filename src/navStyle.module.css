@@ -1,0 +1,39 @@
+
+
+
+
+a{
+    color: #504e4e;
+}
+
+a:link {
+    color: #000000;
+}
+
+/* visited link */
+a:visited {
+    color: #3c3d3c;
+}
+
+/* mouse over link */
+a:hover {
+    color: #000000;
+}
+
+/* selected link */
+a:active {
+    color: #636364;
+}
+
+.hide {
+    visibility: hidden!important;
+}
+
+.show{
+    display: block!important;
+}
+
+.IconDiv:hover + .hide {
+    visibility: visible!important;
+    color: red!important;
+}

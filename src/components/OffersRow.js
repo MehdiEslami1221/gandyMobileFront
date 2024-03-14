@@ -1,21 +1,36 @@
+import {useEffect, useState} from "react";
+import {getCoverByPosition, SERVER_URL} from "../services/Service";
+
 const OffersRow = () => {
+
+    const [cover, setCover] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const {data: data} = await getCoverByPosition(3);
+                setCover(data)
+            } catch (err) {
+                console.log(err.message())
+            }
+        }
+        fetchData().then(r => r);
+    }, []);
+
     return (
         <div>
 
             <div className="row my-2">
 
-                <a href="#" className="col-sm-12 my-2 col-md-6">
-                    <img
-                        src="https://dkstatics-public.digikala.com/digikala-adservice-banners/775711c58208429373d949c24009a0d7d700fd54_1667984736.jpg?x-oss-process=image/quality,q_95/format,webp"
-                        alt="..." className="img-fluid w-100 rounded-3"/>
-                </a>
-
-
-                <a href="#" className="col-sm-12 my-2 col-md-6">
-                    <img
-                        src="https://dkstatics-public.digikala.com/digikala-adservice-banners/695893e3261ca853048cf745d653f0c83c27ba1a_1667982812.jpg?x-oss-process=image/quality,q_95/format,webp"
-                        alt="..." className="img-fluid w-100 rounded-3"/>
-                </a>
+                {
+                    cover.map(cover =>
+                        <a href={cover.type} className="col-sm-12 my-2 col-md-6">
+                            <img
+                                src={SERVER_URL + 'upload/files/' + cover.image}
+                                alt="..." className="img-fluid w-100 rounded-3"/>
+                        </a>
+                    )
+                }
             </div>
 
         </div>
